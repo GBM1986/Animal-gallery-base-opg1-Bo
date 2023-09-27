@@ -21,10 +21,17 @@ function initApp() {
 }
 
 
-function createLoadingScreen() {
-    // byg loading screen her med html dom elementer. og evt et animeret gif eller billede. i vores app tag.
+async function createLoadingScreen() {
+    
+    document.getElementById('loading-screen').style.display = 'flex';
+
+    await fetchData(); // Wait for data to be fetched
+
+    document.getElementById('loading-screen').style.display = 'none';
 
 }
+
+createLoadingScreen(); // Call this function to start data fetching and hide the loading screen when done
 
 
 function initGallery(dataRecived) {
